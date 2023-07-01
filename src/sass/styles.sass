@@ -1,0 +1,517 @@
+$palitra-green: #ecfd13
+$palitra-yellow: #fff29a
+$palitra-gray: #90a0bc
+$palitra-blue: #93c9b1
+    
+@mixin media($size)
+    @media screen and (max-width:#{$size}px)
+        @content
+        
+* 
+    margin: 0
+    box-sizing: border-box
+
+html
+    font-size: 1px
+
+html,body
+    scroll-behavior: smooth
+a
+    text-decoration: none
+    &:hover
+        cursor: url("../img/icons/cursor.cur") , pointer
+h2,h3 
+    font-weight: 400
+    font-family: "Gabriela"
+    
+    text-align: center 
+h2
+    padding: 40px
+    font-size: 48px
+    +media(640)
+        font-size: 36px
+        padding: 10px 
+
+hr
+    width: 100%
+    height: 11px
+    margin: 18px 0
+    border: none
+    
+p
+    font-size: 24px
+    font-weight: 400
+    font-family: "Rubik"
+    
+button
+    display: inline-block
+    margin: 0 auto 
+    color: black
+    padding: 15rem 25rem  
+    font-size: 14rem
+    border: 1px black solid
+    background-color: $palitra-green
+
+
+.wrapper
+    padding-left: 25px
+    padding-right: 25px
+
+.vertical-wrapper
+    $vertical-padding: 100px 
+    padding-top: $vertical-padding
+    padding-bottom: $vertical-padding
+
+.down-gradient
+    position: relative
+
+.down-gradient::after
+    content: ""
+    position: absolute
+    left: 0px
+    bottom: 0px
+    width: 100% 
+    height: 50px
+    z-index: 1
+    // background-color: red
+.header
+    height: 100vh
+    display: flex
+    
+    flex-direction: column
+
+    justify-content: center
+    align-items: center
+    background-color: $palitra-gray
+    background: linear-gradient(to left, transparent , $palitra-gray 50%) 
+    text-align: center
+    color: #000000
+
+        
+    &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100vh
+        top: 0
+        left: 0
+        background-image: url("../img/healthy-food--background.jpg")
+        background-repeat: no-repeat
+        background-position: right
+        z-index: -1
+
+    &::after
+        background: linear-gradient(to bottom, transparent , #000 50%) 
+        
+    &-devider
+        background-color: $palitra-green
+    &-text 
+        font-size: 24px
+        font-weight: 400
+        font-family: "Arsenal"
+        text-align: center
+        margin-bottom: 70rem
+
+    &-button 
+        font-size: 36rem
+        padding: 23rem 75rem
+        +media(420)
+            font-size: 18rem
+            width: 100%
+    &-huge
+        text-shadow: 1px 1px 2px $palitra-green
+        font-size: 72px
+        font-weight: 700
+        font-family: "Arimo"
+        text-align: center  
+        +media(640)
+            font-size: 56px 
+
+    &-menu
+        position: fixed
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px
+        top: 0rem
+        left: 0rem
+        background-color: #000
+        width: 100%
+        z-index: 2
+        &-logo
+            height: 50px
+            width: 305px
+            background-image: url("../img/icons/HerbaLife_logo.png")
+            +media(860)
+                width: 50px
+                background-image: url("../img/icons/HerbaLife_logo_small.png")
+        &-main
+            display: flex
+            column-gap: 20px
+            +media(640)
+                display: none
+                position: fixed
+                left: 0px
+                top: 90px
+                padding: 0
+                width: 100%
+                box-sizing: border-box
+                flex-direction: column
+        &-reference
+            color: #fff
+            font-size: 18rem
+            +media(640)
+                display: block
+                text-align: center
+                padding: 20px
+                width: 100%
+                background-color: #000
+                border-top: 1px solid $palitra-green
+.burger
+    display: none
+    margin: 0
+    color: #fff
+    font-size: 24px
+    padding-right: 60px
+    position: relative
+
+    +media(640)
+        display: block
+    &::after
+        content: url("../img/icons/list.svg")
+        position: absolute
+        width: 40px
+        height: 40px
+        right: 0px
+        top: -7px
+        border: 1px solid $palitra-blue
+        border-radius: 3px
+
+.programs
+    background-color: #000
+
+    &::after
+        background: linear-gradient(to bottom, transparent , #fff 50%) 
+
+    &--header 
+        color: $palitra-green
+    &--devider
+        background-color: $palitra-green
+    &--container
+        display: flex
+        column-gap: 40px
+        row-gap: 40px
+        padding: 75px 0
+        +media(720)
+            flex-wrap: wrap
+            
+        +media(1280)
+            column-gap: 20px
+
+    &--card
+        padding: 50rem
+        width: calc( (100% - 2 * 40px) / 3 )
+        border: 1px solid $palitra-green
+        +media(720)
+            width: 100%
+            padding: 50rem  
+
+        +media(1280)
+            padding: 20rem
+            width: calc( (100% - 2 * 20px) / 3 )
+        &-caption 
+            color: #fff
+            font-size: 28px
+            font-weight: 700
+            font-family: "Arimo"
+            text-align: center
+            +media(1280)
+                font-size: 18px 
+            +media(720)
+                font-size: 28px
+
+        &-picture
+            display: block
+            width: 100%
+            margin: 30px auto
+        &-button
+            display: block
+            margin: auto
+            width: 100%
+            text-align: center
+            +media(720)
+                font-size: 25rem
+
+.about
+    background-color: #fff
+
+    &::after
+        background: linear-gradient(to bottom, transparent , $palitra-yellow 50%) 
+
+    &--header 
+        content:""
+    &--devider
+        background-color: $palitra-green
+    &--name 
+        text-transform: uppercase
+        font-size: 36px
+        padding: 30px 10px
+    &--block 
+        display: flex
+        column-gap: 40px
+        row-gap: 20px
+        +media(860)
+            flex-wrap: wrap-reverse
+    &--container
+        width: calc( 50% - 20px )
+        +media(860)
+            width: 100%
+    &--text 
+        padding-top: 28px
+        font-size: 24px
+        color: #000000
+        font-weight: 400
+        font-family: "Rubik"
+        +media(640)
+            font-size: 16px 
+    &--reference
+        display: block
+
+        text-decoration: none
+        color: #000000
+        font-size: 24px
+        font-weight: 400
+        font-family: 'Roboto Mono', monospace
+        +media(640)
+            font-size: 16px 
+        
+
+    &--photo
+        display: block
+        max-height: 80vh
+        max-width: 100%
+        margin: 20px auto
+
+.principes 
+    background-color: $palitra-yellow
+
+    &::after
+        background: linear-gradient(to bottom, transparent , $palitra-blue 50%) 
+
+    &--header
+        content:""
+    &--devider
+        background-color: #fff
+    &--container
+        display: flex
+        column-gap: 20px
+        row-gap: 50px
+        flex-wrap: wrap
+        padding: 100px 0        
+        +media(720)
+            flex-wrap: wrap
+            padding: 30px 0        
+
+    &--text
+        padding: 30px
+        background-color: #fff
+        width: calc( 50% - 10px )
+        +media(720)
+            width: 100%
+        +media(640)
+            font-size: 16px 
+
+
+.results
+    background-color: $palitra-blue
+
+    &::after
+        background: linear-gradient(to bottom, transparent , #000 50%) 
+
+    &--header
+        content:""
+    
+    &--devider
+        background-color: #000
+    &--container
+        display: flex
+        column-gap: 20rem
+        +media(720)
+            flex-wrap: wrap
+    &--block
+        width: calc( 50% - 20rem )
+        +media(720)
+            width: 100%        
+    &--text 
+        font-size: 42px
+        font-weight: 400
+        font-family: 'Roboto Mono', monospace
+        text-align: center
+        +media(720)
+            font-size: 24px
+
+    &--mass
+        &-holder 
+            margin: auto
+            position: relative
+            width: 320px
+            height: 320px
+            font-size: 48px
+            font-weight: 400
+            font-family: 'Roboto Mono', monospace
+            text-align: center
+            background-image: url("../img/icons/weight.svg")
+            background-repeat: no-repeat
+            background-size: contain
+
+        &-value
+            display: block
+            position: absolute
+            transform: translate(-50% ,-50%)
+            bottom: 90px
+            left: 50%
+        &-symbol 
+            display: block
+            position: absolute
+            transform: translate(-50% ,-50%)
+            bottom: 40px
+            left: 50%            
+    &--quote        
+        &-block 
+            position: relative
+            padding-top: 100px
+            &::before
+                content: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' height='73' viewBox='0 96 960 960' width='73'><path d='M568 568h184V384H568v184Zm-360 0h184V384H208v184Zm473 182 71-160H546V362h228v230l-69 158h-24Zm-360 0 71-160H186V362h228v230l-69 158h-24Zm-21-274Zm360 0Z'/></svg>")
+                position: absolute
+                transform: translate(-50%, 50%)
+                top: 0px
+                left: 0
+                width: 75px
+                height: 75px
+        &-photo
+            position: absolute
+            top: 20px
+            left: 35px
+            width: 100px
+            height: 100px
+            border-radius: 50%
+            background-color: #fff
+            border: 2px solid black
+
+
+        &-name
+            position: absolute
+            top: 40px
+            left: 150px
+            font-size: 24px
+            font-weight: 400
+            font-family: "Lobster"
+
+        &-speciality
+            position: absolute
+            top: 70px
+            left: 150px
+            font-size: 24px
+            font-weight: 400 
+            font-family: "Gabriela"
+            
+        &-icon
+            position: absolute
+            width: 50px
+            height: 50px
+            top: 20px
+            right: 0px
+            background-image: url("../img/icons/mail.svg")  
+
+        &-text 
+            padding: 25px
+            font-size: 30px
+            font-weight: 400
+            font-family: 'Roboto Mono', monospace
+            border: 6px solid $palitra-yellow
+            border-right: none 
+            border-top: none 
+            +media(640)
+                font-size: 16px
+                
+.contact  
+    background-color: #000
+    color: $palitra-blue
+    &--header 
+        content:""
+    &--devider
+        background-color: $palitra-blue
+    &--block
+        display: flex
+        column-gap: 20px
+        +media(720)
+            flex-wrap: wrap
+    &--holder
+        width: calc( 50% - 10px)
+        +media(720)
+            width: 100%
+    &-img
+        display: block
+        max-width: 100%
+        max-height: 80vh
+        margin: 20px auto
+    &--text
+        margin: 20px 0px
+        padding: 0
+
+    &--icon
+        display: block
+        font-size: 36px
+        font-weight: 400
+        font-family: "Gabriela"
+        color: $palitra-blue
+
+    &--paragraph
+        margin-bottom: 20px
+        display: block
+        font-size: 42px
+        font-weight: 400
+        font-family: "Genos"
+
+    &--button 
+        display: block
+        margin: 0
+        padding: 15px 20px
+        font-size: 24px
+        color: #000000
+        font-weight: 400
+        font-family: "Gabriela"
+        +media(720)
+            width: 100%
+    &--reference 
+        &-li-holder
+            content:""
+        &-item
+            content:""
+
+.icon
+    padding-left: 50px
+    position: relative
+
+    &::before
+        position: absolute
+        content:""
+        top: 0px
+        left: 0px
+        height: 40px
+        width: 40px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain     
+    &-phone::before  
+        background-image: url("../img/icons/phone.svg")        
+    &-telegram::before 
+        background-image: url("../img/icons/telegram.svg")
+    &-facebook::before 
+        background-image: url("../img/icons/facebook.svg")
+    &-instagram::before 
+        background-image: url("../img/icons/instagram.svg")
+    &-email::before 
+        background-image: url("../img/icons/mail.svg")
+
+    
