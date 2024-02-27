@@ -1,3 +1,10 @@
+mixin list(users)
+    ul
+        each user in users 
+            li = user
+
+
+
 doctype html
 html(lang="ua")
     head
@@ -14,6 +21,8 @@ html(lang="ua")
             .header-menu.wrapper 
                 .header-menu-logo
                 ul.header-menu-main
+                    li.header-menu-item
+                        a(href="#").header-menu-reference TEST
                     li.header-menu-item
                         a(href="#").header-menu-reference програми
                     li.header-menu-item
@@ -155,5 +164,5 @@ html(lang="ua")
                             li.contact--reference-li-holder
                                 a(href="#").contact--reference-item Програма тренувань
 
-
+         
 
