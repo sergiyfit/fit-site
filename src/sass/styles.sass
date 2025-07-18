@@ -1,13 +1,13 @@
-$palitra-green: #ecfd13
+$palitra-green: #7ac143
 $palitra-yellow: #fff29a
 $palitra-gray: #90a0bc
-$palitra-blue: #93c9b1
-    
+$palitra-blue: #a7ecce
+
 @mixin media($size)
     @media screen and (max-width:#{$size}px)
         @content
-        
-* 
+
+*
     margin: 0
     box-sizing: border-box
 
@@ -16,135 +16,166 @@ html
 
 html,body
     scroll-behavior: smooth
+
 a
-    text-decoration: none 
+    font-family: "Oswald", sans-serif
+    text-decoration: none
+    padding: 0 10px
+    transition: 1s all ease
+
     &:hover
         cursor: url("../img/icons/cursor.cur") , pointer
-h2,h3 
-    font-weight: 400
-    font-family: "Gabriela"
-    
-    text-align: center 
+
+h1
+    font-family: "Ruda", sans-serif
+
+h2,h3
+    font-family: "Oswald", sans-serif
+    text-align: center
+
 h2
-    padding: 40px
+    padding-top: 70px
     font-size: 48px
+
     +media(640)
         font-size: 36px
-        padding: 10px 
+        padding: 10px
 
 hr
-    width: 100%
-    height: 11px
-    margin: 18px 0
+    width: 60%
+    height: 7px
+    text-align: center
+    margin: 70px auto
     border: none
-    
+
 p
     font-size: 24px
     font-weight: 400
-    font-family: "Rubik"
-    
-button
-    display: inline-block
-    margin: 0 auto 
-    color: black
-    padding: 15rem 25rem  
-    font-size: 14rem
-    border: 1px black solid
-    background-color: $palitra-green
+    font-family: "Ruda", sans-serif
 
+button
+    font-family: "Oswald", sans-serif
+    display: inline-block
+    margin: 0 auto
+    color: #e3ffce
+    padding: 15rem 25rem
+    font-size: 14rem
+    border: 1px $palitra-green solid
+    background-color: $palitra-green
+    z-index: 1
+    transition: 1s all ease
+
+    &:hover
+        color: $palitra-green
+        background-color: #e3ffce
+        border: 1px #e3ffce solid
 
 .wrapper
     padding-left: 25px
     padding-right: 25px
 
 .vertical-wrapper
-    $vertical-padding: 100px 
-    padding-top: $vertical-padding
-    padding-bottom: $vertical-padding
+    //$vertical-padding: 100px
+    padding-top: 100px //$vertical-padding
+    padding-bottom: 170px //$vertical-padding
 
 .down-gradient
     position: relative
 
-.down-gradient::after
-    content: ""
-    position: absolute
-    left: 0px
-    bottom: 0px
-    width: 100% 
-    height: 50px
-    z-index: 1
-    // background-color: red
+/*.down-gradient::after
+ content: ""
+ position: absolute
+ left: 0px
+ bottom: 0px
+ width: 100%
+ height: 50px
+ z-index: 1
+ // background-color: red*/
+
+/*-----------TOP MENU-----------*/
+
 .header
     height: 100vh
     display: flex
-    
     flex-direction: column
-
     justify-content: center
     align-items: center
-    background-color: $palitra-gray
-    background: linear-gradient(to left, transparent , $palitra-gray 50%) 
+    //background-color: $palitra-gray
+    background: #B8C7DE
+    background: linear-gradient(137deg, rgb(184, 199, 222) 0%, rgba(80, 105, 135, 1) 50%, rgba(47, 61, 88, 1) 100%)
     text-align: center
-    color: #000000
+    color: #222
 
-        
     &::before
         content: ""
         position: absolute
         width: 100%
-        height: 100vh
+        height: 119.5vh
         top: 0
         left: 0
-        background-image: url("../img/healthy-food--background.jpg")
+        background-image: url("../img/health.png")
         background-repeat: no-repeat
         background-position: right
-        z-index: -1
 
-    &::after
-        background: linear-gradient(to bottom, transparent , #000 50%) 
-        
+    /*&::after
+     background: linear-gradient(to bottom, transparent , #222 50%)*/
+
     &-devider
         background-color: $palitra-green
-    &-text 
+        z-index: 3
+
+    &-text
         font-size: 24px
         font-weight: 400
-        font-family: "Arsenal"
+        font-family: "Ruda", sans-serif
         text-align: center
+        color: #e3ffce
+        z-index: 3
         margin-bottom: 70rem
 
-    &-button 
+    &-button
         font-size: 36rem
         padding: 23rem 75rem
+        font-family: "Oswald", sans-serif
+
         +media(420)
             font-size: 18rem
             width: 100%
+
     &-huge
-        text-shadow: 1px 1px 2px $palitra-green
-        font-size: 72px
-        font-weight: 700
-        font-family: "Arimo"
-        text-align: center  
+        //text-shadow: 1px 1px 2px $palitra-green
+        font-size: 65px
+        color: #e3ffce
+        font-family: "Oswald", sans-serif
+        text-align: center
+        margin-top: 70px
+        z-index: 3
+
         +media(640)
-            font-size: 56px 
+            font-size: 56px
 
     &-menu
         position: fixed
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 20px
+        padding: 25px 80px
         top: 0rem
         left: 0rem
-        background-color: #000
+        background-color: #222
         width: 100%
-        z-index: 2
+        z-index: 4
+
         &-logo
             height: 50px
+            margin: 0 10px
             width: 305px
             background-image: url("../img/icons/HerbaLife_logo.png")
+
             +media(860)
                 width: 50px
                 background-image: url("../img/icons/HerbaLife_logo_small.png")
+
         &-main
             display: flex
             column-gap: 20px
@@ -157,16 +188,24 @@ button
                 width: 100%
                 box-sizing: border-box
                 flex-direction: column
+
         &-reference
-            color: #fff
-            font-size: 18rem
+            color: #e3ffce
+            font-size: 25rem
+
             +media(640)
                 display: block
                 text-align: center
                 padding: 20px
                 width: 100%
-                background-color: #000
+                background-color: #222
                 border-top: 1px solid $palitra-green
+
+        a:hover
+            color: $palitra-green
+
+/*-----------BURGER MENU-----------*/
+
 .burger
     display: none
     margin: 0
@@ -174,9 +213,11 @@ button
     font-size: 24px
     padding-right: 60px
     position: relative
+    z-index: 5
 
     +media(640)
         display: block
+
     &::after
         content: url("../img/icons/list.svg")
         position: absolute
@@ -187,46 +228,62 @@ button
         border: 1px solid $palitra-blue
         border-radius: 3px
 
+/*-----------PROGRAMS (MID PART OF SITE)-----------*/
+
 .programs
-    background-color: #000
+    background-color: #222
 
     &::after
-        background: linear-gradient(to bottom, transparent , #fff 50%) 
+        background: linear-gradient(to bottom, transparent , #fff 50%)
 
-    &--header 
+    &--header
         color: $palitra-green
+
     &--devider
         background-color: $palitra-green
+
     &--container
         display: flex
         column-gap: 40px
         row-gap: 40px
-        padding: 75px 0
+        //padding: 5px 0
+
         +media(720)
             flex-wrap: wrap
-            
+
         +media(1280)
             column-gap: 20px
 
     &--card
+        scale: (0.8)
         padding: 50rem
+        background-color: #506987
         width: calc( (100% - 2 * 40px) / 3 )
-        border: 1px solid $palitra-green
+        border: 7px solid $palitra-green
+        transition: 1s all ease
+
+        &:hover
+            scale: (0.9)
+            box-shadow: 60px -16px #d2f7b5
+
         +media(720)
             width: 100%
-            padding: 50rem  
+            padding: 50rem
 
         +media(1280)
             padding: 20rem
             width: calc( (100% - 2 * 20px) / 3 )
-        &-caption 
-            color: #fff
+
+        &-caption
+            color: #e3ffce
             font-size: 28px
             font-weight: 700
-            font-family: "Arimo"
+            font-family: "Ruda", sans-serif
             text-align: center
+
             +media(1280)
-                font-size: 18px 
+                font-size: 18px
+
             +media(720)
                 font-size: 28px
 
@@ -234,131 +291,200 @@ button
             display: block
             width: 100%
             margin: 30px auto
+
         &-button
             display: block
             margin: auto
             width: 100%
+            font-size: 25px
             text-align: center
+
             +media(720)
                 font-size: 25rem
 
+/*-----------ABOUT NADIA-----------*/
+
 .about
-    background-color: #fff
+    background-color: #e2ecff
 
     &::after
-        background: linear-gradient(to bottom, transparent , $palitra-yellow 50%) 
+        background: linear-gradient(to bottom, transparent , $palitra-yellow 50%)
 
-    &--header 
-        content:""
+    &--header
+        content: ""
+        color: #506987
     &--devider
         background-color: $palitra-green
-    &--name 
-        text-transform: uppercase
-        font-size: 36px
-        padding: 30px 10px
-    &--block 
+
+    &--block
         display: flex
         column-gap: 40px
         row-gap: 20px
+        justify-content: space-around
+
         +media(860)
             flex-wrap: wrap-reverse
+
     &--container
-        width: calc( 50% - 20px )
+        border: 7px #506987 solid
+        background-color: #f3f4ff
+        padding: 25px
+        scale: (0.9)
+        width: calc( 29% - 18px )
+        transition: 1s all ease
+
+        &:hover
+            scale: (1)
+            box-shadow: 60px -16px #b0c6e1
+
         +media(860)
             width: 100%
-    &--text 
-        padding-top: 28px
+
+    &--text
+        padding-top: 25px
         font-size: 24px
-        color: #000000
+        color: #506987
         font-weight: 400
-        font-family: "Rubik"
+        font-family: "Ruda", sans-serif
+
         +media(640)
-            font-size: 16px 
+            font-size: 16px
+
     &--reference
         display: block
-
         text-decoration: none
-        color: #000000
+        color: #506987
         font-size: 24px
         font-weight: 400
-        font-family: 'Roboto Mono', monospace
+        font-family: "Ruda", sans-serif
+
         +media(640)
-            font-size: 16px 
-        
+            font-size: 16px
 
     &--photo
         display: block
-        max-height: 80vh
+        max-height: 60vh
         max-width: 100%
-        margin: 20px auto
+        scale: (0.9)
+        border: 7px #506987 solid
+        //background-image: url("../img/photo/about_nadia_sheremet.jpg")
+        margin: 0 70px
+        transition: 1s all ease
 
-.principes 
+        &:hover
+            scale: (1)
+            box-shadow: 60px -16px #b0c6e1
+
+    & p
+        color: #506987
+
+    &--country__ua
+        padding: 25px 0 25px 0
+
+    &--country__usa
+        padding: 25px 0 25px 0
+
+    & hr
+        background-color: #506987
+
+/*-----------PRINCIPPES-----------*/
+
+.principes
     background-color: $palitra-yellow
 
     &::after
-        background: linear-gradient(to bottom, transparent , $palitra-blue 50%) 
+        background: linear-gradient(to bottom, transparent , $palitra-blue 50%)
 
     &--header
-        content:""
+        content: ""
+        color: #f39c12
+
     &--devider
         background-color: #fff
+
     &--container
         display: flex
         column-gap: 20px
         row-gap: 50px
         flex-wrap: wrap
-        padding: 100px 0        
+        padding: 0 0 25px 0
+        justify-content: space-evenly
+
         +media(720)
             flex-wrap: wrap
-            padding: 30px 0        
+            padding: 30px 0
 
     &--text
         padding: 30px
-        background-color: #fff
-        width: calc( 50% - 10px )
+        color: #f39c12
+        background-color: #fef9e7
+        border: 7px #f39c12 solid
+        scale: (0.9)
+        transition: 1s all ease
+        width: calc( 35% - 10px )
+
+        &:hover
+            scale: (1)
+            box-shadow: 60px -16px #fcd79d
+
         +media(720)
             width: 100%
-        +media(640)
-            font-size: 16px 
 
+        +media(640)
+            font-size: 16px
+
+    & hr
+        background-color: #f39c12
+
+/*-----------RESULTS OF PEOPLE-----------*/
 
 .results
     background-color: $palitra-blue
 
     &::after
-        background: linear-gradient(to bottom, transparent , #000 50%) 
+        background: linear-gradient(to bottom, transparent , #222 50%)
 
     &--header
-        content:""
-    
+        content: ""
+        color: #17a589
+
     &--devider
-        background-color: #000
+        background-color: #17a589
+
     &--container
         display: flex
         column-gap: 20rem
+        margin: 50px 90px 0 90px
         +media(720)
             flex-wrap: wrap
+
     &--block
         width: calc( 50% - 20rem )
+
         +media(720)
-            width: 100%        
-    &--text 
-        font-size: 42px
-        font-weight: 400
-        font-family: 'Roboto Mono', monospace
-        text-align: center
+            width: 100%
+
+    &--text
+        font-size: 30px
+        margin-top: 25px
+        color: #17a589
+        text-align: left
+        font-family: "Ruda", sans-serif
+
         +media(720)
             font-size: 24px
 
     &--mass
-        &-holder 
-            margin: auto
+
+        &-holder
+            margin: 10px 250px
             position: relative
-            width: 320px
-            height: 320px
-            font-size: 48px
+            width: 250px
+            height: 250px
+            font-size: 30px
+            top: 35px
             font-weight: 400
-            font-family: 'Roboto Mono', monospace
+            font-family: "Ruda", sans-serif
             text-align: center
             background-image: url("../img/icons/weight.svg")
             background-repeat: no-repeat
@@ -368,150 +494,229 @@ button
             display: block
             position: absolute
             transform: translate(-50% ,-50%)
-            bottom: 90px
+            font-size: 30px
+            color: #17a589
+            font-weight: 500
+            bottom: 60px
             left: 50%
-        &-symbol 
-            display: block
-            position: absolute
-            transform: translate(-50% ,-50%)
-            bottom: 40px
-            left: 50%            
-    &--quote        
-        &-block 
+
+        /*&-symbol
+         display: block
+         position: absolute
+         transform: translate(-50% ,-50%)
+         color: #17a589
+         font-size: 25px
+         bottom: 40px
+         left: 50%*/
+
+    &--quote
+
+        &-block
             position: relative
+            margin-bottom: 45px
             padding-top: 100px
+
             &::before
-                content: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' height='73' viewBox='0 96 960 960' width='73'><path d='M568 568h184V384H568v184Zm-360 0h184V384H208v184Zm473 182 71-160H546V362h228v230l-69 158h-24Zm-360 0 71-160H186V362h228v230l-69 158h-24Zm-21-274Zm360 0Z'/></svg>")
+                content: ""
+                //content: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' height='73' viewBox='0 96 960 960' width='73'><path d='M568 568h184V384H568v184Zm-360 0h184V384H208v184Zm473 182 71-160H546V362h228v230l-69 158h-24Zm-360 0 71-160H186V362h228v230l-69 158h-24Zm-21-274Zm360 0Z'/></svg>")
+                background-image: url("../img/icons/qq.svg")
+                background-repeat: no-repeat
+                background-position: center
+                background-size: contain
                 position: absolute
                 transform: translate(-50%, 50%)
-                top: 0px
+                top: 25px
                 left: 0
-                width: 75px
-                height: 75px
+                width: 45px
+                height: 45px
+
         &-photo
             position: absolute
             top: 20px
             left: 35px
-            width: 100px
-            height: 100px
+            width: 70px
+            height: 70px
             border-radius: 50%
-            background-color: #fff
-            border: 2px solid black
-
+            background-color: #e8f8f5
+            border: 5px solid #17a589
 
         &-name
             position: absolute
             top: 40px
-            left: 150px
+            left: 130px
             font-size: 24px
-            font-weight: 400
-            font-family: "Lobster"
+            font-weight: 700
+            color: #17a589
+            font-family: "Ruda", sans-serif
 
         &-speciality
             position: absolute
-            top: 70px
-            left: 150px
-            font-size: 24px
-            font-weight: 400 
-            font-family: "Gabriela"
-            
+            top: 80px
+            left: 130px
+            font-size: 14px
+            font-weight: 500
+            color: #17a589
+            font-family: "Ruda", sans-serif
+
         &-icon
             position: absolute
-            width: 50px
-            height: 50px
-            top: 20px
+            width: 45px
+            height: 45px
+            top: 30px
             right: 0px
-            background-image: url("../img/icons/mail.svg")  
+            background-image: url("../img/icons/mail.svg")
 
-        &-text 
+        &-text
             padding: 25px
-            font-size: 30px
-            font-weight: 400
-            font-family: 'Roboto Mono', monospace
-            border: 6px solid $palitra-yellow
-            border-right: none 
-            border-top: none 
+            font-size: 20px
+            font-weight: 500
+            color: #17a589
+            font-family: "Ruda", sans-serif
+            border: 6px solid #e8f8f5
+            border-right: none
+            border-top: none
+
             +media(640)
                 font-size: 16px
-                
-.contact  
-    background-color: #000
+
+/*-----------CONTACT NADIA-----------*/
+
+.contact
+    background-color: #222
     color: $palitra-blue
-    &--header 
-        content:""
+
+    &--header
+        content: ""
+
     &--devider
         background-color: $palitra-blue
+
+    & hr
+        margin-bottom: 140px
+
     &--block
         display: flex
         column-gap: 20px
+        justify-content: space-around
+        //align-items: center
+
         +media(720)
             flex-wrap: wrap
+
     &--holder
-        width: calc( 50% - 10px)
+        width: calc( 30% - 10px)
+
         +media(720)
             width: 100%
+
     &-img
         display: block
         max-width: 100%
-        max-height: 80vh
-        margin: 20px auto
+        max-height: 60vh
+        //margin: 20px auto
+        scale: (1)
+        transition: 1s all ease
+        border: 7px $palitra-blue solid
+
+        &:hover
+            scale: (1.1)
+            box-shadow: 60px -16px #e0fff2
+
     &--text
-        margin: 20px 0px
+        margin: 45px 0px
         padding: 0
 
     &--icon
         display: block
-        font-size: 36px
+        font-size: 35px
         font-weight: 400
-        font-family: "Gabriela"
+        font-family: "Ruda", sans-serif
         color: $palitra-blue
 
     &--paragraph
         margin-bottom: 20px
         display: block
-        font-size: 42px
+        margin: 35px 75px 
+        font-size: 30px
         font-weight: 400
-        font-family: "Genos"
+        font-family: "Ruda", sans-serif
 
-    &--button 
+    &--button
         display: block
         margin: 0
         padding: 15px 20px
-        font-size: 24px
-        color: #000000
-        font-weight: 400
-        font-family: "Gabriela"
+        font-size: 30px
+        margin-top: 75px 
+        font-family: "Oswald", sans-serif
+
         +media(720)
             width: 100%
-    &--reference 
+
+    &--reference
+        display: flex
+        font-size: 25px
+        justify-content: space-evenly
+        align-items: center
+
         &-li-holder
-            content:""
+            content: ""
+            list-style: none
+
         &-item
-            content:""
+            content: ""
+            color: #e3ffce
+            text-decoration: none
+
+            /*&:hover
+             color: #e3ffce*/
 
 .icon
-    padding-left: 50px
+    padding-left: 70px
     position: relative
 
     &::before
         position: absolute
-        content:""
+        content: ""
         top: 0px
         left: 0px
-        height: 40px
-        width: 40px
+        height: 35px
+        width: 35px
         background-repeat: no-repeat
         background-position: center
-        background-size: contain     
-    &-phone::before  
-        background-image: url("../img/icons/phone.svg")        
-    &-telegram::before 
+        background-size: contain
+
+    &-phone::before
+        background-image: url("../img/icons/phone.svg")
+
+    &-telegram::before
         background-image: url("../img/icons/telegram.svg")
-    &-facebook::before 
+
+    &-facebook::before
         background-image: url("../img/icons/facebook.svg")
-    &-instagram::before 
+
+    &-instagram::before
         background-image: url("../img/icons/instagram.svg")
-    &-email::before 
+
+    &-email::before
         background-image: url("../img/icons/mail.svg")
 
-    
+/*-----------FOOTER(?)-----------*/
+
+.footer
+    padding: 25px
+    background-color: $palitra-green
+    //height: 50px
+    text-align: center
+    color: #e3ffce
+    font-family: "Ruda", sans-serif
+
+    /*& hr
+     width: 10%
+     height: 7px
+     text-align: center
+     margin: 50px auto
+     background-color: #e3ffce
+     border: none*/
+
+    p
+        font-size: 20px
