@@ -264,7 +264,7 @@ button
 
         &:hover
             scale: (0.9)
-            box-shadow: 60px -16px #d2f7b5
+            box-shadow: 60px -16px #e3ffce
 
         +media(720)
             width: 100%
@@ -330,7 +330,7 @@ button
         background-color: #f3f4ff
         padding: 25px
         scale: (0.9)
-        width: calc( 29% - 18px )
+        width: calc( 30% - 18px )
         transition: 1s all ease
 
         &:hover
@@ -368,8 +368,10 @@ button
         scale: (0.9)
         border: 7px #506987 solid
         //background-image: url("../img/photo/about_nadia_sheremet.jpg")
-        margin: 0 70px
         transition: 1s all ease
+        
+        +media(630)
+            margin: 0 70px
 
         &:hover
             scale: (1)
@@ -421,7 +423,7 @@ button
         border: 7px #f39c12 solid
         scale: (0.9)
         transition: 1s all ease
-        width: calc( 35% - 10px )
+        width: calc( 40% - 10px )
 
         &:hover
             scale: (1)
@@ -606,6 +608,9 @@ button
     &--holder
         width: calc( 30% - 10px)
 
+        & a:hover
+            color: $palitra-green
+
         +media(720)
             width: 100%
 
@@ -636,7 +641,7 @@ button
     &--paragraph
         margin-bottom: 20px
         display: block
-        margin: 35px 75px 
+        margin: 35px 75px
         font-size: 30px
         font-weight: 400
         font-family: "Ruda", sans-serif
@@ -646,7 +651,7 @@ button
         margin: 0
         padding: 15px 20px
         font-size: 30px
-        margin-top: 75px 
+        margin-top: 75px
         font-family: "Oswald", sans-serif
 
         +media(720)
