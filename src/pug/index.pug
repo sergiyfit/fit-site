@@ -29,6 +29,7 @@ html(lang="ua")
         header.header.wrapper.down-gradient 
             .header-menu.wrapper 
                 .header-menu-logo
+                .burMenu
                 ul.header-menu-main
                     li.header-menu-item
                         a(href="#").header-menu-reference Програми
@@ -40,7 +41,6 @@ html(lang="ua")
                         a(href="#").header-menu-reference Результати
                     li.header-menu-item
                         a(href="#").header-menu-reference Контакти
-                .burger
             h1.header-huge Досягніть своїх мрій з Herbalife!
             hr.header-devider
             p.header-text Знайдіть ідеальний спосіб підтримувати своє здоров'я та фізичну форму разом з професійним тренером - Herbalife.
@@ -119,7 +119,7 @@ html(lang="ua")
                         | що пройшли клінічні дослідження. 
                         //| Посилання на дослідження
 
-            //section.wrapper.results.vertical-wrapper.down-gradient
+            section.wrapper.results.vertical-wrapper.down-gradient
                 h2.results--header Результати
                 hr.results--devider
                 .results--container
@@ -130,22 +130,19 @@ html(lang="ua")
                             //.results--mass-symbol кг
                     .results--block
                         .results--quote-block 
-                            //img(src="#" alt="#")
-                            .results--quote-photo
+                            img(src="img/people/german.png" alt="#").results--quote-photo
                             .results--quote-name Герман
                             //.results--quote-speciality skip
                             a(href="#").results--quote-icon.icon-email mail  
                             p.results--quote-text У мене все добре! Я щиро радий, що рік тому познайомився з вами. Саме завдяки вашій підтримці я змінив свої харчові звички, покращив самопочуття й наповнив своє життя енергією. Ви знаєте, що я використовую не лише продукти харчування, а й засоби для догляду за тілом — близько семи видів одночасно. Я перепробував більшість продукції, щоб краще зрозуміти її дію на організм і побачити, що саме вона допомагає покращити. Коли виникають запитання, я завжди отримую від вас цінні поради й рекомендації. Адже саме так має виглядати справжній наставник — людина, яка живе філософією компанії й невпинно крокує вперед, підкорюючи нові вершини. Я переконаний, що рік тому зробив правильний вибір — спочатку спробував тестову програму, згодом став незалежним партнером, а з часом — і супервайзером.
                         .results--quote-block 
-                            //img(src="#" alt="#")
-                            .results--quote-photo
+                            img(src="img/people/iryna.png" alt="#").results--quote-photo
                             .results--quote-name Ірина
                             //.results--quote-speciality skip
                             a(href="#").results--quote-icon.icon-email mail  
                             p.results--quote-text Мене звати Ірина, мені 54 роки. Мій результат — мінус 22 кг. До своєї мети я йшла дуже довго — понад 30 років. Так, саме так. Все життя минуло в боротьбі із зайвою вагою. Я перепробувала все, але нічого не допомагало. Я була розчарована. Коли моя консультантка запропонувала взяти участь у марафоні, я наважилася. Бажання бути здоровою (адже разом із зайвою вагою з’явилося багато хвороб), красивою та стрункою — перемогло. Марафон з харчування подарував мені нове життя в новому тілі. Вже 1,7 року я — вдячна клієнтка компанії Herbalife. З великим задоволенням вживаю наш корисний продукт! Один у полі — не воїн. Але коли поруч консультант, який завжди підкаже і підтримає, коли є команда однодумців, дух суперництва, прагнення не бути гіршою за інших — це надихає. Знання, теми з харчування, майстер-класи, спілкування і підтримка — усе це разом працює на досягнення мети.
                         .results--quote-block 
-                            //img(src="#" alt="#")
-                            .results--quote-photo
+                            img(src="img/people/mariana.png" alt="#").results--quote-photo
                             .results--quote-name Мар'яна
                             //.results--quote-speciality Туроператор
                             a(href="#").results--quote-icon.icon-email mail  
@@ -179,6 +176,8 @@ html(lang="ua")
                     a(href="#").contact--reference-item Програма тренувань
             hr
         p © 2025 Designed by watersidex
+
+    script(src="js/scripts.js")             
 
 
 

@@ -4,7 +4,7 @@ $palitra-gray: #90a0bc
 $palitra-blue: #a7ecce
 
 @mixin media($size)
-    @media screen and (max-width:#{$size}px)
+    @media screen and (min-width:#{$size}px)
         @content
 
 *
@@ -34,26 +34,26 @@ h2,h3
     text-align: center
 
 h2
-    padding-top: 70px
-    font-size: 48px
+    font-size: 36px
+    padding: 10px
 
     +media(770)
-        font-size: 36px
-        padding: 10px
+        padding-top: 70px
+        font-size: 48px
 
 hr
     width: 60%
     height: 7px
     text-align: center
     border: none
-    margin: 70px auto
+    margin: 40px auto
 
     +media(1022)
-        margin: 40px auto
+        margin: 70px auto
 
 p
-    font-size: 24px
     font-weight: 400
+    font-size: 20px
     font-family: "Ruda", sans-serif
 
 button
@@ -74,12 +74,9 @@ button
         border: 1px #e3ffce solid
 
 .wrapper
-    padding: 0px
+    padding: 0 15px
 
     +media(1540)
-        padding: 0 15px
-
-    +media(2560)
         padding-left: 55px
         padding-right: 55px
 
@@ -122,12 +119,12 @@ button
         height: 119.5vh
         top: 0
         left: 0
-        background-image: url("../img/health.png")
+        background-image: none
         background-repeat: no-repeat
         background-position: right
 
-        +media (1022)
-            background-image: none
+        +media (1024)
+            background-image: url("../img/health.png")
     /*&::after
      background: linear-gradient(to bottom, transparent , #222 50%)*/
 
@@ -136,7 +133,7 @@ button
         z-index: 3
 
     &-text
-        font-size: 24px
+        font-size: 18px
         font-weight: 400
         font-family: "Ruda", sans-serif
         text-align: center
@@ -145,110 +142,131 @@ button
         padding: 0 15px
         margin-bottom: 70rem
 
-        +media(424)
-            font-size: 18px
+        +media(425)
+            font-size: 24px
 
     &-button
-        font-size: 36rem
-        padding: 23rem 75rem
+        font-size: 25rem
         font-family: "Oswald", sans-serif
 
-        +media(767)
-            padding: 23rem 65rem
+        +media(768)
+            font-size: 30rem
+            padding: 23rem 75rem
 
         +media(345)
-            font-size: 20rem
+            padding: 23rem 65rem
             //width: 100%
 
     &-huge
         //text-shadow: 1px 1px 2px $palitra-green
-        font-size: 65px
         padding: 0 15px
         color: #e3ffce
         font-family: "Oswald", sans-serif
         text-align: center
+        font-size: 40px
         margin-top: 70px
         z-index: 3
 
         +media(770)
-            font-size: 40px
+            font-size: 65px
 
     &-menu
         position: fixed
         display: flex
-        justify-content: space-between
-        align-items: flex-start
-        padding: 25px 80px
+        //align-items: flex-start
+        //align-items: center
+        padding: 25px 30px
         top: 0rem
         left: 0rem
         background-color: #222
         width: 100%
+        justify-content: space-between
         z-index: 4
+        //висота 100vh /мб отдельный елемент для фона меню
 
         +media(599)
-            padding: 25px 30px
+            padding: 25px 80px
+
+        +media(1007)
+            align-items: center
 
         &-logo
             height: 50px
             margin: 0 10px
-            width: 305px
-            background-image: url("../img/icons/HerbaLife_logo.png")
+            width: 50px
+            background-image: url("../img/icons/HerbaLife_logo_small.png")
 
-            +media(1161)
-                width: 50px
-                background-image: url("../img/icons/HerbaLife_logo_small.png")
+            +media(1262)
+                width: 305px
+                background-image: url("../img/icons/HerbaLife_logo.png")
 
         &-main
-            display: flex
-            column-gap: 20px
-            +media(906)
-                display: none
-                position: fixed
-                left: 0px
-                top: 90px
-                padding: 0
-                width: 100%
-                box-sizing: border-box
-                flex-direction: column
+            display: none
+            //position: fixed
+            //left: 0px
+            //top: 90px
+            //padding: 0
+            //width: 100%
+            //box-sizing: border-box
+            //flex-direction: column
+            //позишин камбек
+            +media(1007)
+                display: flex
+                column-gap: 20px
+                //position: none /xd))
+                flex-direction: row
 
         &-reference
-            color: #e3ffce
-            font-size: 25rem
+            display: block
+            text-align: center
+            padding: 20px
+            width: 100%
+            background-color: #222
+            //border-top: 1px solid $palitra-green
 
-            +media(770)
-                display: block
-                text-align: center
-                padding: 20px
-                width: 100%
-                background-color: #222
-                border-top: 1px solid $palitra-green
+            +media(1007)
+                color: #e3ffce
+                font-size: 25rem
 
         a:hover
             color: $palitra-green
 
 /*-----------BURGER MENU-----------*/
 
-.burger
-    display: none
+.burMenu
+    display: block
     margin: 0
-    color: #fff
-    font-size: 24px
-    padding-right: 60px
-    position: relative
     z-index: 5
+    //color: #fff
+    //font-size: 24px
+    width: 50px
+    height: 50px
+    //padding-right: 60px
+    //position: relative
+    background-image: url("../img/icons/list.svg")
+    background-size: cover
 
-    +media(906)
-        display: block
+    +media(1007)
+        display: none
 
-    &::after
-        content: url("../img/icons/list.svg")
-        position: absolute
-        width: 50px
-        height: 50px
-        //right: 0px
-        //top: -7px
-        //border: 1px solid $palitra-blue
-        //border-radius: 3px
+    .burMenuOpen
+        //display: none
+        z-index: 5
+        background-image: url(../img/icons/close.svg)
+
+    +media(1007)
+        display: none
+
+.menuOpen
+    display: block
+    position: absolute
+    right: 0
+    top: -7px
+
+    /*&::after
+     content: url("../img/icons/list.svg")
+     //border: 1px solid $palitra-blue
+     //border-radius: 3px*/
 
 /*-----------PROGRAMS (MID PART OF SITE)-----------*/
 
@@ -266,21 +284,24 @@ button
 
     &--container
         display: flex
-        column-gap: 40px
+        column-gap: 20px
+        flex-wrap: wrap
         row-gap: 40px
+        flex-direction: column
+        align-content: center
         //padding: 5px 0
 
-        +media(1022)
-            flex-wrap: wrap
-
-        +media(1280)
-            column-gap: 20px
+        +media(1014)
+            justify-content: center
+            flex-wrap: nowrap
+            flex-direction: row
+            column-gap: 40px
 
     &--card
         scale: (0.9)
-        padding: 50rem
+        padding: 20rem
         background-color: #506987
-        width: calc( (100% - 2 * 40px) / 3 )
+        width: 100%
         border: 7px solid $palitra-green
         transition: 1s all ease
 
@@ -288,36 +309,33 @@ button
             scale: (1)
             //box-shadow: 25px -16px #e3ffce
 
-        +media(424)
-            padding: 20rem
+        +media(1280)
+            scale: (0.8)
 
-        +media(1022)
-            width: 100%
+            &:hover
+                scale: (0.9)
+
+        +media(425)
             padding: 50rem
 
-        +media(1540)
+        +media(1014)
+            width: calc( (100% - 2 * 20px) / 3 )
+
             &:hover
                 box-shadow: none
 
-        +media(2560)
+        +media(1540)
             &:hover
                 box-shadow: 40px -16px #e3ffce
 
-        +media(1280)
-            padding: 20rem
-            width: calc( (100% - 2 * 20px) / 3 )
-
         &-caption
             color: #e3ffce
-            font-size: 28px
             font-weight: 700
             font-family: "Ruda", sans-serif
             text-align: center
+            font-size: 18px
 
             +media(1280)
-                font-size: 18px
-
-            +media(1022)
                 font-size: 25px
 
         &-picture
@@ -329,11 +347,11 @@ button
             display: block
             margin: auto
             width: 100%
-            font-size: 25px
+            font-size: 25rem
             text-align: center
 
             +media(720)
-                font-size: 25rem
+                font-size: 25px
 
 /*-----------ABOUT NADIA-----------*/
 
@@ -353,63 +371,74 @@ button
         display: flex
         column-gap: 40px
         row-gap: 20px
-        justify-content: space-around
+        flex-wrap: wrap-reverse
 
         +media(860)
-            flex-wrap: wrap-reverse
+            justify-content: space-around
 
     &--container
         border: 7px #506987 solid
         background-color: #f3f4ff
         padding: 25px
         scale: (0.9)
-        width: calc( 30% - 18px )
         transition: 1s all ease
+        width: 100%
 
         &:hover
             scale: (1)
-            box-shadow: 60px -16px #b0c6e1
 
-        +media(860)
-            width: 100%
+        +media(1540)
+            &:hover
+                scale: (1)
+                box-shadow: 60px -16px #b0c6e1
+
+        +media(1540)
+            width: calc( 30% - 18px )
 
     &--text
         padding-top: 25px
-        font-size: 24px
+        font-size: 16px
         color: #506987
         font-weight: 400
         font-family: "Ruda", sans-serif
 
         +media(770)
-            font-size: 16px
+            font-size: 24px
 
     &--reference
         display: block
         text-decoration: none
         color: #506987
-        font-size: 24px
+        font-size: 16px
         font-weight: 400
         font-family: "Ruda", sans-serif
 
         +media(770)
-            font-size: 16px
+            font-size: 24px
 
     &--photo
         display: block
-        max-height: 60vh
+        //max-height: 60vh
         max-width: 100%
+        margin: 0 auto
         scale: (0.9)
         border: 7px #506987 solid
         //background-image: url("../img/photo/about_nadia_sheremet.jpg")
         transition: 1s all ease
-        margin: 0 70px
-
-        +media(630)
-            margin: 0
 
         &:hover
             scale: (1)
-            box-shadow: 60px -16px #b0c6e1
+
+        //+media(768)
+
+        +media(1540)
+            max-height: 60vh
+            margin: 0 70px
+
+        +media(1540)
+            &:hover
+                scale: (1)
+                box-shadow: 60px -16px #b0c6e1
 
     & p
         color: #506987
@@ -442,12 +471,11 @@ button
         display: flex
         column-gap: 20px
         row-gap: 50px
-        flex-wrap: wrap
         padding: 0 0 25px 0
+        flex-wrap: wrap
         justify-content: space-evenly
 
         +media(720)
-            flex-wrap: wrap
             padding: 30px 0
 
     &--text
@@ -457,17 +485,19 @@ button
         border: 7px #f39c12 solid
         scale: (0.9)
         transition: 1s all ease
-        width: calc( 40% - 10px )
+        width: 100%
 
         &:hover
             scale: (1)
-            box-shadow: 60px -16px #fcd79d
 
-        +media(720)
-            width: 100%
+        +media(1540)
+            &:hover
+                scale: (1)
+                box-shadow: 60px -16px #fcd79d
 
-        +media(770)
-            font-size: 16px
+        +media(870)
+            font-size: 24px
+            width: calc( 40% - 10px )
 
     & hr
         background-color: #f39c12
@@ -489,31 +519,38 @@ button
 
     &--container
         display: flex
-        column-gap: 20rem
-        margin: 50px 90px 0 90px
-        +media(720)
-            flex-wrap: wrap
+        flex-wrap: wrap
+        //margin: 50px 90px 0 90px
+        +media(870)
+            flex-wrap: nowrap
+            column-gap: 20rem
 
     &--block
-        width: calc( 50% - 20rem )
+        width: 100%
+        margin: 60px 15px
 
-        +media(720)
-            width: 100%
+        +media(870)
+            width: calc( 50% - 20rem )
 
     &--text
-        font-size: 30px
+        font-size: 25px
         margin-top: 25px
         color: #17a589
-        text-align: left
+        padding: 15px
+        text-align: center
         font-family: "Ruda", sans-serif
 
-        +media(720)
-            font-size: 24px
+        +media(870)
+            text-align: left
+
+        +media(1540)
+            font-size: 30px
 
     &--mass
 
         &-holder
-            margin: 10px 250px
+            //margin: 10px 250px
+            margin: 0 auto
             position: relative
             width: 250px
             height: 250px
@@ -525,6 +562,9 @@ button
             background-image: url("../img/icons/weight.svg")
             background-repeat: no-repeat
             background-size: contain
+
+            +media(1540)
+                margin: 10px 250px
 
         &-value
             display: block
@@ -569,9 +609,9 @@ button
         &-photo
             position: absolute
             top: 20px
-            left: 35px
-            width: 70px
-            height: 70px
+            left: 30px
+            width: 72px
+            height: 72px
             border-radius: 50%
             background-color: #e8f8f5
             border: 5px solid #17a589
@@ -579,7 +619,7 @@ button
         &-name
             position: absolute
             top: 40px
-            left: 130px
+            left: 110px
             font-size: 24px
             font-weight: 700
             color: #17a589
@@ -604,7 +644,7 @@ button
 
         &-text
             padding: 25px
-            font-size: 20px
+            font-size: 16px
             font-weight: 500
             color: #17a589
             font-family: "Ruda", sans-serif
@@ -613,7 +653,7 @@ button
             border-top: none
 
             +media(770)
-                font-size: 16px
+                font-size: 20px
 
 /*-----------CONTACT NADIA-----------*/
 
@@ -632,22 +672,22 @@ button
 
     &--block
         display: flex
-        padding: 0 32px
+        //padding: 0 32px
         column-gap: 20px
-        justify-content: space-around
+        flex-wrap: wrap
         //align-items: center
 
-        +media(720)
-            flex-wrap: wrap
+        +media(768)
+            justify-content: space-around
 
     &--holder
-        width: calc( 30% - 10px)
+        width: 100%
 
         & a:hover
             color: $palitra-green
 
-        +media(720)
-            width: 100%
+        +media(768)
+            width: calc( 30% - 10px)
 
     &-img
         display: block
@@ -660,47 +700,67 @@ button
 
         &:hover
             scale: (1.1)
-            box-shadow: 60px -16px #e0fff2
+
+        +media(1540)
+            &:hover
+                scale: (1.1)
+                box-shadow: 60px -16px #e0fff2
 
     &--text
-        margin: 45px 0px
+        margin: 45px 10px
         padding: 0
 
     &--icon
         display: block
-        font-size: 35px
+        font-size: 30px
         font-weight: 400
         font-family: "Ruda", sans-serif
         color: $palitra-blue
+
+        +media(768)
+            font-size: 35px
 
     &--paragraph
         margin-bottom: 20px
         display: block
         margin: 35px 75px
-        font-size: 30px
+        font-size: 25px
         font-weight: 400
         font-family: "Ruda", sans-serif
+
+        +media(768)
+            font-size: 30px
 
     &--button
         display: block
         margin: 0
         padding: 15px 20px
-        font-size: 30px
+        font-size: 25px
         margin-top: 75px
         font-family: "Oswald", sans-serif
 
-        +media(720)
-            width: 100%
+        +media(768)
+            white-space: nowrap
+            font-size: 30px
+
+        //+media(720)
+            //width: 100%
 
     &--reference
         display: flex
         font-size: 25px
+        padding: 0
         justify-content: space-evenly
+        flex-direction: column
         align-items: center
+
+        +media(768)
+            flex-direction: row
 
         &-li-holder
             content: ""
             list-style: none
+            padding: 0 0 10px 0
 
         &-item
             content: ""
